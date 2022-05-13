@@ -1,0 +1,28 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="170px" height="52px">
+<defs>
+<linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(112,255,253)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(68,77,170)" stop-opacity="1" />
+</linearGradient>
+<filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="170px" height="52px"  >
+                <feOffset in="SourceAlpha" dx="4.5" dy="7.794" />
+                <feGaussianBlur result="blurOut" stdDeviation="2.828" />
+                <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
+                <feComposite operator="atop" in="floodOut" in2="blurOut" />
+                <feComponentTransfer><feFuncA type="linear" slope="1"/></feComponentTransfer>
+                <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+            </filter>
+
+</defs>
+<g filter="url(#Filter_0)">
+<text kerning="auto" font-family="Adobe Heiti Std" fill="rgb(0, 0, 0)" transform="matrix( 0.28613908651082, 0, 0, 0.28687157657198,4.5026031790735, 32.1897470316967)" font-size="116.9px"><tspan font-size="116.9px" font-family="MF LangQian (Noncommercial)" fill="#32ACEB">&#21069;&#24448;&#21442;&#19982;</tspan></text>
+<text kerning="auto" font-family="Adobe Heiti Std" fill="url(#PSgrad_0)" transform="matrix( 0.28613908651082, 0, 0, 0.28687157657198,4.5026031790735, 32.1897470316967)" font-size="116.9px"><tspan font-size="116.9px" font-family="MF LangQian (Noncommercial)" fill="#32ACEB">&#21069;&#24448;&#21442;&#19982;</tspan></text>
+<text kerning="auto" font-family="Adobe Heiti Std" stroke-width="2px" stroke="rgb(13, 12, 127)" fill-opacity="0" stroke-opacity="1" transform="matrix( 0.28613908651082, 0, 0, 0.28687157657198,4.5026031790735, 32.1897470316967)" font-size="116.9px"><tspan font-size="116.9px" font-family="MF LangQian (Noncommercial)" fill="#32ACEB">&#21069;&#24448;&#21442;&#19982;</tspan></text>
+</g>
+</svg>

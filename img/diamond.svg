@@ -1,0 +1,15 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="440px" height="35px">
+<path fill-rule="evenodd"  opacity="0.651" fill="rgb(226, 222, 213)"
+ d="M13.001,0.002 L26.001,17.500 L13.001,34.998 L0.000,17.500 L13.001,0.002 Z"/>
+<path fill-rule="evenodd"  opacity="0.651" fill="rgb(226, 222, 213)"
+ d="M117.001,0.002 L130.002,17.500 L117.001,34.998 L104.000,17.500 L117.001,0.002 Z"/>
+<path fill-rule="evenodd"  opacity="0.651" fill="rgb(226, 222, 213)"
+ d="M220.001,0.002 L233.002,17.500 L220.001,34.998 L207.000,17.500 L220.001,0.002 Z"/>
+<path fill-rule="evenodd"  opacity="0.651" fill="rgb(226, 222, 213)"
+ d="M324.001,0.002 L337.001,17.500 L324.001,34.998 L311.000,17.500 L324.001,0.002 Z"/>
+<path fill-rule="evenodd"  opacity="0.651" fill="rgb(226, 222, 213)"
+ d="M427.001,0.002 L440.001,17.500 L427.001,34.998 L414.000,17.500 L427.001,0.002 Z"/>
+</svg>

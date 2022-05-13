@@ -1,0 +1,456 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Microsoft YaHei;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.valid-content {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.section-title {
+  width: 974px;
+  height: 189px;
+  background: url('../img/section-button-bg.svg') no-repeat 0 0;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.section-title img {
+  width: 237px;
+  height: 61px;
+}
+
+/* 头部样式 */
+header {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  background-color: #000;
+}
+
+header .valid-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  width: 255px;
+  height: 56px;
+}
+
+header .nav-wrap {
+  display: flex;
+  align-items: center;
+}
+
+header .nav-wrap .nav-item {
+  padding: 0 50px;
+  color: #B9DFFC;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* 首页部分样式 */
+.home {
+  height: 1078px;
+  background: url('../img//home-bg@2x.png') no-repeat center center/cover;
+  padding-top: 202px;
+  position: relative;
+}
+
+.home .valid-content {
+  /* position: relative; */
+}
+
+.home .up-ads {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.home .left-ad {
+  /* margin: 0 40px; */
+  text-align: center;
+  width: 600px;
+}
+
+.home .left-ad .ad1 {
+  width: 600px;
+  height: 466px;
+}
+
+.home .left-ad .slash {
+  width: 448px;
+  height: 33px;
+  margin: 25px auto;
+}
+
+.home .left-ad .text {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: Microsoft JhengHei UI;
+  color: #C3D7F0;
+}
+
+.home .left-ad .diamond {
+  width: 440px;
+  height: 35px;
+  margin-top: 16px;
+}
+
+.home .right-ad {
+  width: 699px;
+  height: 747px;
+  position: relative;
+}
+
+.home .right-ad .bg {
+  width: 100%;
+  height: 100%;
+}
+
+.home .right-ad .ad2 {
+  width: 500px;
+  height: 526px;
+  position: absolute;
+  z-index: 10;
+  left: 96px;
+  top: 87px;
+}
+
+.home .right-ad .btn-bg {
+  width: 393px;
+  height: 101px;
+  position: absolute;
+  left: 148px;
+  bottom: 29px;
+  z-index: 10;
+}
+
+.home .right-ad .text-ad {
+  width: 170px;
+  height: 52px;
+  position: absolute;
+  left: 263px;
+  bottom: 50px;
+  z-index: 20;
+}
+
+.home .ad_text {
+  width: 1660px;
+  height: 84px;
+  margin-left: -232px;
+}
+
+/* 项目特点 */
+.project {
+  height: 380px;
+  background-color: #000;
+  padding: 100px 0 90px 0;
+}
+
+.project .section-title .title {
+  width: 237px;
+  height: 61px;
+}
+
+/* 特征 */
+.project-features {
+  width: 100%;
+  height: 808px;
+  background: #000 url('../img/project-bg.png') no-repeat 0 0;
+  background-size: cover;
+}
+
+.project-features .valid-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 92px 0;
+}
+
+.project-features .feature-item {
+  width: 600px;
+  height: 350px;
+}
+
+.project-features .feature-item .title {
+  width: 190px;
+  height: 84px;
+  background: url('../img/project-feature-subtitle-bg.png') no-repeat 0 0;
+  color: #DFEDFF;
+  font-size: 30px;
+  text-align: right;
+  font-weight: bold;
+  padding: 10px 16px 0 0;
+}
+
+.project-features .feature-item .content {
+  padding: 20px 0 0 101px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #C3D7F0;
+  line-height: 30px;
+}
+
+/* 市场特征 */
+.market {
+  background: #000;
+  padding: 100px 0 40px 0;
+}
+
+.market-features {
+  /* width: 100%; */
+  background: #000;
+}
+
+.market-features .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding-top: 50px;
+}
+
+.market-features .item::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  width: 325px;
+  height: 319px;
+  background: url('../img/market-decorate1@2x.png') 0 0/cover;
+}
+
+.market-features .item:nth-child(2)::after {
+  background: url('../img/market-decorate2@2x.png') 0 0/cover;
+  width: 507px;
+  height: 476px;
+  left: -400px;
+}
+
+.market-features .item .introduce {
+  flex: 1;
+}
+
+.market-features .item:nth-child(2n) {
+  flex-flow: row-reverse;
+}
+
+.market-features .item .main-img {
+  width: 492px;
+  height: 670px;
+}
+
+.market-features .item:nth-child(2n + 1) .main-img {
+  margin-right: 42px;
+}
+
+.market-features .item:nth-child(2n) .main-img {
+  margin-left: 42px;
+}
+
+.market-features .item .introduce .item-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #88EAFF;
+}
+
+.market-features .item .introduce .line {
+  width: 60px;
+  height: 4px;
+  background: url('../img/market-line.svg') no-repeat 0 0/100%;
+  margin: 26px 0 50px 0;
+}
+
+.market-features .item .introduce .item-content {
+  font-size: 30px;
+  font-weight: 400;
+  color: #B9F3FF;
+  line-height: 48px;
+}
+
+.market-features .item .decorate-img {
+  width: 325px;
+  height: 319px;
+}
+
+/* NFT */
+.nft {
+  background: #000 url('../img/nft-bg.png') no-repeat 0 0/cover;
+  padding: 48px 0 115px 0;
+  position: relative;
+}
+
+.nft-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* padding-top: 100px; */
+}
+
+.nft-list.row2 {
+  justify-content: space-evenly;
+}
+
+.nft-list .nft-item {
+  position: relative;
+  z-index: 10;
+  margin-top: 108px;
+}
+
+.nft-list .nft-item .nft-img {
+  width: 341px;
+  height: 508px;
+}
+
+.nft-list .nft-item .info {
+  position: absolute;
+  left: 120px;
+  top: 418px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.nft-list .nft-item .info .value {
+  padding-left: 33px;
+  font-weight: bold;
+  color: #77EAFF;
+}
+
+.nft-list .nft-item .nft-img-text {
+  display: block;
+  width: 355px;
+  height: 72px;
+  margin: 10px 0 0 -7px;
+}
+
+.nft .valid-content {
+  position: relative;
+}
+
+.nft-bg-line {
+  position: absolute;
+  left: 0;
+  top: 577px;
+  z-index: 1;
+  width: 100%;
+  height: 69px;
+  object-fit: cover;
+}
+
+.nft-bg-line.line2 {
+  top: 1290px;
+  left: -40px;
+}
+
+.nft-remark {
+  width: 100%;
+  min-width: 1300px;
+  height: 180px;
+  object-fit: cover;
+  margin-top: 60px;
+}
+
+/* 代币经济学 */
+.new-cash {
+  background-color: #000;
+}
+
+.new-cash .valid-content {
+  width: 1518px;
+  height: 946px;
+  display: flex;
+  align-items: center;
+  background: #000 url('../img/cash-bg.png') no-repeat 0 0/cover;
+  padding: 124px 0 0 117px;
+}
+
+#echarts {
+  width: 647px;
+  height: 695px;
+  background: url('../img/cash-echart.png') no-repeat 0 0/cover;
+  position: relative;
+}
+
+#echarts .echarts-title-wrap {
+  position: absolute;
+  left: 250px;
+  top: 327px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #C3D7F0;
+}
+
+#echarts .echarts-title {
+  font-size: 37px;
+  color: #FFFFFF;
+}
+
+.left-echarts .echarts-decorate {
+  width: 690px;
+  height: 102px;
+}
+
+.right-colors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.right-colors .color-item {
+  position: relative;
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 54px;
+  width: 250px;
+  height: 60px;
+}
+
+.right-colors .color-item .label {
+  color: #C3D7F0;
+}
+
+.right-colors .color-item .value {
+  color: #40E6FF;
+}
+
+.right-colors .color-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-color: #468ED7;
+}
