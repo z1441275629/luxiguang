@@ -8,142 +8,221 @@ function $t(path) {
   return LANGUAGE === "zh-cn" ? ZH_CN[path] : EN_US[path] || "";
 }
 
-var chartDom = document.getElementById("echarts");
-var myChart = echarts.init(chartDom);
-var option;
+const animateCSS = (element, animation, prefix = 'animate__') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    // const node = document.querySelector(element);
+    const node = element;
+    if (node.classList.contains('has-animated')) {
+      return;
+    }
+    
+    const animations = Array.isArray(animation) ? [`${prefix}animated`, ...animation] : [`${prefix}animated`, animation];
+    node.classList.add(...animations);
 
-option = {
-  legend: {
-    show: false,
-    top: 'center',
-    left: 'right',
-  },
-  tooltip: {
-    trigger: "item",
-    // formatter: "{a} <br/>{b} : {c} ({d}%)",
-    formatter: "{b}",
-  },
-  toolbox: {
-    show: false,
-  },
-  label: {
-    show: false,
-  },
-  series: [
-    {
-      // name: 'Nightingale Chart',
-      type: "pie",
-      radius: [50, 200],
-      center: ["50%", "50%"],
-      roseType: "radius", // radius area
-      itemStyle: {
-        borderRadius: 8,
-      },
-      label: {
-        show: false
-      },
-      // emphasis: {
-      //   label: {
-      //     show: false,
-      //   }
-      // },
-      data: [
-        { value: 35, name: "ES应用预留 35%" },
-        { value: 20, name: "预售 20%" },
-        { value: 10, name: "私人轮 10%" },
-        { value: 3, name: "应用维护 3%" },
-        { value: 12, name: "上所预留 12%" },
-        { value: 15, name: "流动性 15%" },
-        { value: 5, name: "公共关系 5%" },
-        { value: 2, name: "每笔交易税 2%" },
-      ],
-    },
-  ],
-};
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(...animations);
+      node.classList.add('has-animated');
+      resolve('Animation ended');
+    }
 
-// option = {
-//   // title: {
-//   //   text: 'Nightingale Chart',
-//   //   subtext: 'Fake Data',
-//   //   left: 'center'
-//   // },
-//   tooltip: {
-//     trigger: 'item',
-//     formatter: '{a} <br/>{b} : {c} ({d}%)'
-//   },
-//   // legend: {
-//   //   left: 'center',
-//   //   top: 'bottom',
-//   //   data: [
-//   //     'rose1',
-//   //     'rose2',
-//   //     'rose3',
-//   //     'rose4',
-//   //     'rose5',
-//   //     'rose6',
-//   //     'rose7',
-//   //     'rose8'
-//   //   ]
-//   // },
-//   toolbox: {
-//     show: true,
-//     // feature: {
-//     //   mark: { show: true },
-//     //   dataView: { show: true, readOnly: false },
-//     //   restore: { show: true },
-//     //   saveAsImage: { show: true }
-//     // }
-//   },
-//   series: [
-//     {
-//       name: 'Radius Mode',
-//       type: 'pie',
-//       radius: [20, 140],
-//       center: ['25%', '50%'],
-//       roseType: 'radius',
-//       itemStyle: {
-//         borderRadius: 5
-//       },
-//       label: {
-//         show: false
-//       },
-//       emphasis: {
-//         label: {
-//           show: true
-//         }
-//       },
-//       data: [
-//         { value: 40, name: 'rose 1' },
-//         { value: 33, name: 'rose 2' },
-//         { value: 28, name: 'rose 3' },
-//         { value: 22, name: 'rose 4' },
-//         { value: 20, name: 'rose 5' },
-//         { value: 15, name: 'rose 6' },
-//         { value: 12, name: 'rose 7' },
-//         { value: 10, name: 'rose 8' }
-//       ]
-//     },
-//     // {
-//     //   name: 'Area Mode',
-//     //   type: 'pie',
-//     //   radius: [20, 140],
-//     //   center: ['75%', '50%'],
-//     //   roseType: 'area',
-//     //   itemStyle: {
-//     //     borderRadius: 5
-//     //   },
-//     //   data: [
-//     //     { value: 30, name: 'rose 1' },
-//     //     { value: 28, name: 'rose 2' },
-//     //     { value: 26, name: 'rose 3' },
-//     //     { value: 24, name: 'rose 4' },
-//     //     { value: 22, name: 'rose 5' },
-//     //     { value: 20, name: 'rose 6' },
-//     //     { value: 18, name: 'rose 7' },
-//     //     { value: 16, name: 'rose 8' }
-//     //   ]
-//     // }
-//   ]
-// };
+    node.addEventListener('animationend', handleAnimationEnd, { once: true });
+  });
 
-option && myChart.setOption(option);
+// 动画速度
+// animate__slow	2s
+// animate__slower	3s
+// animate__fast	800ms
+// animate__faster	500ms
+// 动画重复播放
+// animate__repeat-1	1
+// animate__repeat-2	2
+// animate__repeat-3	3
+// animate__infinite	infinite
+// 动画延迟
+// animate__delay-2s	2s
+// animate__delay-3s	3s
+// animate__delay-4s	4s
+// animate__delay-5s	5s
+// 页面动画配置
+const animateList = [
+  {
+    domSelector: '.left-ad',
+    enter: ['animate__backInLeft'],
+    exit: [],
+  },
+  {
+    domSelector: '.right-ad',
+    enter: 'animate__backInRight',
+    exit: '',
+  },
+  {
+    domSelector: '.ad_text',
+    enter: 'animate__backInUp',
+  },
+  {
+    domSelector: '.section-title',
+    enter: 'animate__rubberBand',
+  },
+  {
+    domSelector: '.feature-item:nth-child(2n + 1) .title',
+    enter: 'animate__bounceInLeft',
+  },
+  {
+    domSelector: '.feature-item:nth-child(2n + 1) .content',
+    enter: 'animate__bounceInLeft',
+  },
+  {
+    domSelector: '.feature-item:nth-child(2n) .title',
+    enter: 'animate__bounceInRight',
+  },
+  {
+    domSelector: '.feature-item:nth-child(2n) .content',
+    enter: 'animate__bounceInRight',
+  },
+  {
+    domSelector: '.market-features .item:nth-child(2n + 1) .main-img',
+    enter: 'animate__fadeInTopLeft',
+  },
+  {
+    domSelector: '.market-features .item:nth-child(2n) .main-img',
+    enter: 'animate__fadeInTopRight',
+  },
+  {
+    domSelector: '.market-features .item:nth-child(2n) .introduce',
+    enter: 'animate__fadeInTopLeft',
+  },
+  {
+    domSelector: '.market-features .item:nth-child(2n + 1) .introduce',
+    enter: 'animate__fadeInTopRight',
+  },
+  {
+    domSelector: '.nft-item',
+    enter: 'animate__rotateIn',
+  },
+  {
+    domSelector: '.nft-bg-line',
+    enter: 'nft-bg-line',
+  },
+  {
+    domSelector: '.nft-remark',
+    enter: 'animate__swing',
+  },
+  {
+    domSelector: '.echarts-title-wrap',
+    enter: 'animate__heartBeat',
+  },
+  {
+    domSelector: '.right-colors',
+    enter: 'animate__fadeInRightBig',
+  },
+  {
+    domSelector: '.left-title',
+    enter: 'animate__flipInY',
+  },
+  {
+    domSelector: '.time-line-item',
+    enter: 'animate__zoomInRight',
+  },
+  {
+    domSelector: '.partner-item .partner-img',
+    enter: 'animate__flipInX',
+  },
+  {
+    domSelector: '.partner-item .partner-name',
+    enter: 'animate__flipInY',
+  },
+  {
+    domSelector: '.team-introduce',
+    enter: 'animate__heartBeat',
+  },
+  {
+    domSelector: '.partner-item',
+    enter: 'animate__headShake',
+  },
+  {
+    domSelector: '.link-item',
+    enter: 'animate__flipInY',
+  },
+];
+
+// 获取元素距离页面顶部的距离
+function getPageTop(element) {   
+  var realTop = element.offsetTop;
+  var parent = element.offsetParent;
+  while (parent !== null) {
+      realTop += parent.offsetTop;
+      parent = parent.offsetParent;
+  }
+  return realTop;
+}
+
+function handleBodyScroll() {
+  animateList.forEach(item => {
+    const domList = document.querySelectorAll(item.domSelector);
+    [].forEach.call(domList, dom => {
+      const scrollTop = document.documentElement.scrollTop;
+      const clientHeight = document.documentElement.clientHeight;
+      const pageTop = getPageTop(dom);
+      if (pageTop >= scrollTop - 50 && pageTop <= scrollTop + clientHeight) {
+        animateCSS(dom, item.enter);
+      }
+    });
+  });
+}
+
+function throttle(fn, delay = 300) {
+  var timer = null;
+  return function (...args) {
+    if (timer) {
+      return;
+    }
+    fn(...args);
+    timer = setTimeout(function () {
+      clearTimeout(timer);
+      timer = null;
+    }, delay);
+  }
+}
+
+function debounce(fn, delay = 300) {
+  var timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn(...args);
+    }, delay);
+  }
+}
+
+const timeLineNode = document.querySelector('.time-line-wrap');
+const progressNode = document.querySelector('.axis-progress');
+function handleScrollProgress() {
+  const pageTop = getPageTop(timeLineNode) - 400;
+  const offsetHeight = timeLineNode.offsetHeight;
+  const scrollTop = document.documentElement.scrollTop;
+  const diff = scrollTop - pageTop;
+  if (diff < 0 || diff > offsetHeight) return;
+  progressNode.style.height = Math.ceil(diff / offsetHeight * 100) + '%';
+}
+
+const navLinks = document.querySelectorAll(".nav-link");
+[...navLinks].forEach(nav => {
+  nav.onclick = function (e) {
+    e.preventDefault();
+    const link = this.getAttribute('href');
+    const dom = document.querySelector(link); // ! 注意，这里的href只能写dom的ID或者class
+    if (!dom) return;
+    const domPageTop = getPageTop(dom);
+    window.scrollTo({
+      top: domPageTop - 100, // 100 是header的高度
+      behavior: 'smooth',
+    })
+  }
+});
+
+window.addEventListener('scroll', throttle(handleBodyScroll), false);
+window.addEventListener('scroll', handleScrollProgress, false);
+window.addEventListener('ready', handleBodyScroll, false);
