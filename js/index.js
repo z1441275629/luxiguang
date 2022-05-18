@@ -1,13 +1,3 @@
-// 语言
-var LANGUAGE = "zh-cn";
-var ZH_CN = {};
-var EN_US = {};
-
-// 翻译语言
-function $t(path) {
-  return LANGUAGE === "zh-cn" ? ZH_CN[path] : EN_US[path] || "";
-}
-
 const animateCSS = (element, animation, prefix = 'animate__') =>
   // We create a Promise and return it
   new Promise((resolve, reject) => {
@@ -31,22 +21,22 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
     node.addEventListener('animationend', handleAnimationEnd, { once: true });
   });
 
-// 动画速度
+// animate speed
 // animate__slow	2s
 // animate__slower	3s
 // animate__fast	800ms
 // animate__faster	500ms
-// 动画重复播放
+// animate repeat
 // animate__repeat-1	1
 // animate__repeat-2	2
 // animate__repeat-3	3
 // animate__infinite	infinite
-// 动画延迟
+// animate delay
 // animate__delay-2s	2s
 // animate__delay-3s	3s
 // animate__delay-4s	4s
 // animate__delay-5s	5s
-// 页面动画配置
+// animate configs
 const animateList = [
   {
     domSelector: '.left-ad',
@@ -148,7 +138,7 @@ const animateList = [
   },
 ];
 
-// 获取元素距离页面顶部的距离
+// get the distance of element to page top
 function getPageTop(element) {   
   var realTop = element.offsetTop;
   var parent = element.offsetParent;
@@ -213,11 +203,11 @@ const navLinks = document.querySelectorAll(".nav-link");
   nav.onclick = function (e) {
     e.preventDefault();
     const link = this.getAttribute('href');
-    const dom = document.querySelector(link); // ! 注意，这里的href只能写dom的ID或者class
+    const dom = document.querySelector(link); // ! pay attention: only class or id is supported to supply in href
     if (!dom) return;
     const domPageTop = getPageTop(dom);
     window.scrollTo({
-      top: domPageTop - 100, // 100 是header的高度
+      top: domPageTop - 100, // 100 is the height of header
       behavior: 'smooth',
     })
   }
