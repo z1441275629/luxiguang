@@ -716,6 +716,38 @@ header .nav-wrap .nav-item {
   /* padding: 77px 0 102px 0; */
 }
 
+.team-list .team-item {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.team-list .team-item img {
+  width: 300px;
+  height: 300px;
+}
+
+.team-list .team-item:hover .introduce {
+  display: block;
+}
+.team-list .team-item .introduce {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* margin: 20px 0; */
+  /* border-left: 4px solid #2958de; */
+  /* padding-left: 16px; */
+  padding: 120px 0 0 0;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 24px;
+  color: #fff;
+}
+
 /* footer */
 footer {
   padding: 67px 0 70px 0;
