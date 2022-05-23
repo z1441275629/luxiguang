@@ -9,6 +9,10 @@ a {
   color: inherit;
 }
 
+html {
+  background: #000;
+}
+
 body {
   overflow-x: hidden;
   font-family: Microsoft YaHei;
@@ -19,6 +23,10 @@ li {
   list-style: none;
 }
 
+section, footer, header {
+  min-width: 1300px;
+}
+
 .valid-content {
   width: 1300px;
   margin: 0 auto;
@@ -27,7 +35,7 @@ li {
 .section-title {
   width: 974px;
   height: 189px;
-  background: url('/esports/section-button-bg.svg') no-repeat 0 0;
+  background: url('../img/section-button-bg.svg') no-repeat 0 0;
   background-size: 100% 100%;
   display: flex;
   align-items: center;
@@ -96,7 +104,7 @@ header .nav-wrap .nav-item {
 /* 首页部分样式 */
 .home {
   height: 1078px;
-  background: url('/esports//home-bg@2x.png') no-repeat center center/cover;
+  background: url('../img/home-bg.webp') no-repeat center center/cover;
   padding-top: 202px;
   position: relative;
 }
@@ -203,7 +211,7 @@ header .nav-wrap .nav-item {
 .project-features {
   width: 100%;
   height: 808px;
-  background: #000 url('/esports/project-bg.png') no-repeat 0 0;
+  background: #000 url('../img/project-bg.webp') no-repeat 0 0;
   background-size: cover;
 }
 
@@ -222,7 +230,7 @@ header .nav-wrap .nav-item {
 .project-features .feature-item .title {
   width: 190px;
   height: 84px;
-  background: url('/esports/project-feature-subtitle-bg.png') no-repeat 0 0;
+  background: url('../img/project-feature-subtitle-bg.png') no-repeat 0 0;
   color: #DFEDFF;
   font-size: 30px;
   text-align: right;
@@ -265,11 +273,11 @@ header .nav-wrap .nav-item {
   bottom: 24px;
   width: 325px;
   height: 319px;
-  background: url('/esports/market-decorate1@2x.png') 0 0/cover;
+  background: url('../img/market-decorate1.webp') 0 0/cover;
 }
 
 .market-features .item:nth-child(2)::after {
-  background: url('/esports/market-decorate2@2x.png') 0 0/cover;
+  background: url('../img/market-decorate2.webp') 0 0/cover;
   width: 507px;
   height: 476px;
   left: -400px;
@@ -305,7 +313,7 @@ header .nav-wrap .nav-item {
 .market-features .item .introduce .line {
   width: 60px;
   height: 4px;
-  background: url('/esports/market-line.svg') no-repeat 0 0/100%;
+  background: url('../img/market-line.svg') no-repeat 0 0/100%;
   margin: 26px 0 50px 0;
 }
 
@@ -323,7 +331,7 @@ header .nav-wrap .nav-item {
 
 /* NFT */
 .nft {
-  background: #000 url('/esports/nft-bg.png') no-repeat 0 0/cover;
+  background: #000 url('../img/nft-bg.webp') no-repeat 0 0/cover;
   padding: 48px 0 115px 0;
   position: relative;
 }
@@ -410,7 +418,7 @@ header .nav-wrap .nav-item {
   height: 946px;
   display: flex;
   align-items: center;
-  background: #000 url('/esports/cash-bg.png') no-repeat 0 0/cover;
+  background: #000 url('../img/cash-bg.webp') no-repeat 0 0/cover;
   padding: 124px 0 0 117px;
   margin-top: 100px;
 }
@@ -418,7 +426,7 @@ header .nav-wrap .nav-item {
 #echarts {
   width: 647px;
   height: 695px;
-  background: url('/esports/cash-echart.png') no-repeat 0 0/cover;
+  background: url('../img/cash-echart.webp') no-repeat 0 0/cover;
   position: relative;
 }
 
@@ -504,7 +512,7 @@ header .nav-wrap .nav-item {
 
 /* 路线图 */
 .time-line {
-  background: #000 url('/esports/time-line-bg.png') 0 0/cover;
+  background: #000 url('../img/timeline-bg.webp') 0 0/cover;
   padding-top: 100px;
 }
 
@@ -557,13 +565,13 @@ header .nav-wrap .nav-item {
 .time-line-wrap .axis-bg {
   width: 19px;
   height: 1353px;
-  background: url('/esports/axis-bg.svg') no-repeat 0 0/cover;
+  background: url('../img/axis-bg.svg') no-repeat 0 0/cover;
 }
 
 .time-line-wrap .axis-bg .axis-progress {
   width: 100%;
   height: 10%;
-  background: url('/esports/axis.svg') no-repeat 0 0/100% 100%;
+  background: url('../img/axis.svg') no-repeat 0 0/100% 100%;
   margin-left: 1px;
 }
 
@@ -579,7 +587,7 @@ header .nav-wrap .nav-item {
 .time-line-item .time-line-name {
   width: 180px;
   height: 66px;
-  background: url('/esports/timeline-time.png') no-repeat 0 0/cover;
+  background: url('../img/timeline-time.webp') no-repeat 0 0/cover;
   font-size: 30px;
   font-weight: 400;
   color: #C3D7F0;
@@ -596,7 +604,7 @@ header .nav-wrap .nav-item {
   position: absolute;
   left: -62px;
   top: 12px;
-  background: url('/esports/timeline-circle.png') no-repeat 0 0/cover;
+  background: url('../img/timeline-circle.webp') no-repeat 0 0/cover;
 }
 
 .time-line-item .stage-msg {
@@ -628,7 +636,7 @@ header .nav-wrap .nav-item {
   position: absolute;
   left: 0;
   top: 17px;
-  background: url('/esports/arrow.png') no-repeat 0 0/cover;
+  background: url('../img/arrow.png') no-repeat 0 0/cover;
 }
 
 /* 合作伙伴 */
@@ -684,7 +692,7 @@ header .nav-wrap .nav-item {
 }
 
 .team {
-  background: url('/esports/team-bg.png') no-repeat 0 0/cover;
+  background: url('../img/team-bg.webp') no-repeat 0 0/cover;
   position: relative;
   overflow: hidden;
 }
@@ -764,25 +772,25 @@ footer .link-list .link-item {
   width: 80px;
   height: 80px;
   border-radius: 24px;
-  background: #143E4C url('/esports/link1.png') no-repeat center center/44px 44px;
+  background: #143E4C url('../img/link1.png') no-repeat center center/44px 44px;
   margin-right: 32px;
   cursor: pointer;
 }
 
 footer .link-list .link-item.airplane {
-  background-image: url('/esports/link1.png');
+  background-image: url('../img/link1.png');
 }
 
 /* footer .link-list .link-item:nth-child(2) {
-  background-image: url('/esports/link2.png');
+  background-image: url('../img/link2.png');
 }
 
 footer .link-list .link-item:nth-child(3) {
-  background-image: url('/esports/link3.png');
+  background-image: url('../img/link3.png');
 } */
 
 footer .link-list .link-item.twitter {
-  background-image: url('/esports/link4.png');
+  background-image: url('../img/link4.png');
 }
 
 .copy-right {
