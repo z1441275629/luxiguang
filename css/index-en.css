@@ -16,6 +16,7 @@ html {
 body {
   overflow-x: hidden;
   font-family: Microsoft YaHei;
+  zoom: 0.67;
 }
 
 ul,
@@ -46,6 +47,7 @@ section, footer, header {
 .section-title img {
   /* width: 237px; */
   height: 61px;
+  margin-bottom: 4px;
 }
 
 /* 头部样式 */
@@ -407,11 +409,15 @@ header .nav-wrap .nav-item {
 }
 
 .nft-remark {
-  width: 100%;
+  /* width: 100%; */
   min-width: 1300px;
   height: 180px;
   object-fit: cover;
   margin-top: 60px;
+  zoom: 0.67;
+  display: block;
+  margin: 0 auto;
+  object-fit: fill;
 }
 
 /* 代币经济学 */
