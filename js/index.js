@@ -190,10 +190,12 @@ function debounce(fn, delay = 300) {
 const timeLineNode = document.querySelector('.time-line-wrap');
 const progressNode = document.querySelector('.axis-progress');
 function handleScrollProgress() {
-  const pageTop = getPageTop(timeLineNode) - 400;
-  const offsetHeight = timeLineNode.offsetHeight;
+  const zoom = 0.67;
+  const pageTop = (getPageTop(timeLineNode) - 400) * zoom;
+  const offsetHeight = timeLineNode.offsetHeight * zoom;
   const scrollTop = document.documentElement.scrollTop;
   const diff = scrollTop - pageTop;
+  console.log(diff, offsetHeight, pageTop);
   if (diff < 0 || diff > offsetHeight) return;
   progressNode.style.height = Math.ceil(diff / offsetHeight * 100) + '%';
 }
