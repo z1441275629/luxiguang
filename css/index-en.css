@@ -24,6 +24,32 @@ li {
   list-style: none;
 }
 
+#message {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50px;
+  z-index: 1000;
+  padding: 12px 16px;
+  font-size: 30px;
+  opacity: 1;
+  transition: all 0.6s;
+}
+
+#message.hide {
+  opacity: 0;
+}
+
+#message.success {
+  background-color: rgb(149, 228, 149);
+  color: green;
+}
+
+#message.error {
+  background-color: rgb(231, 122, 122);
+  color: rgba(255, 0, 0, 1);
+}
+
 section, footer, header {
   min-width: 1300px;
 }
@@ -81,7 +107,7 @@ header .nav-wrap {
 }
 
 header .nav-wrap .nav-item {
-  padding: 0 50px;
+  padding: 0 35px;
   color: #B9DFFC;
   cursor: pointer;
   font-size: 24px;
@@ -101,6 +127,31 @@ header .nav-wrap .nav-item {
   width: 36px;
   height: 36px;
   cursor: pointer;
+}
+
+/* 公告 */
+.notice {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  width: 1300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  background-color: #f00;
+  color: #fff;
+  font-size: 30px;
+}
+
+.notice .copy-button {
+  border: 1px solid #fff;
+  border-radius: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  user-select: none;
 }
 
 /* 首页部分样式 */

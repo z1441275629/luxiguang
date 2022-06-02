@@ -203,17 +203,64 @@ function handleScrollProgress() {
 const navLinks = document.querySelectorAll(".nav-link");
 [...navLinks].forEach(nav => {
   nav.onclick = function (e) {
-    e.preventDefault();
     const link = this.getAttribute('href');
-    const dom = document.querySelector(link); // ! pay attention: only class or id is supported to supply in href
-    if (!dom) return;
-    const domPageTop = getPageTop(dom);
-    window.scrollTo({
-      top: domPageTop - 100, // 100 is the height of header
-      behavior: 'smooth',
-    })
+    if (link.startsWith("#")) {
+      e.preventDefault();
+      const dom = document.querySelector(link); // ! pay attention: only class or id is supported to supply in href
+      if (!dom) return;
+      const domPageTop = getPageTop(dom);
+      window.scrollTo({
+        top: domPageTop - 100, // 100 is the height of header
+        behavior: 'smooth',
+      })
+    }
   }
 });
+
+function previewPPT(src) {
+  let url = 'http://view.officeapps.live.com/op/view.aspx?src=' + src;
+  window.open(url);
+}
+
+function copy(text) {
+  var textareaEl = document.createElement('textarea');
+  textareaEl.setAttribute('readonly', 'readonly'); 
+  textareaEl.value = text;
+  document.body.appendChild(textareaEl);
+  textareaEl.select();
+  var res = document.execCommand('copy');
+  document.body.removeChild(textareaEl);
+  return res;
+}
+
+document.getElementById('previewPPT').onclick = function (e) {
+  e.preventDefault();
+  previewPPT('https://es-game.com/assets/E-Sports.pptx');
+}
+
+const noticeDom = document.getElementById("message");
+let timer = null;
+
+function showMessage(type, message, time = 2000) {
+  console.log(123)
+  noticeDom.classList.remove('hide');
+  noticeDom.classList.add(type);
+  noticeDom.innerText = message;
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    noticeDom.classList.add('hide');
+    noticeDom.classList.remove(type);
+  }, time);
+}
+
+document.getElementById('copy').onclick = function (e) {
+  const res = copy('0xB163b439aB1d3e97Af8AD952C68561Eb1301EF54');
+  if (res) {
+    showMessage('success', 'Successfully copied');
+  } else {
+    showMessage('error', 'Sorry, Failed to copy');
+  }
+}
 
 window.addEventListener('scroll', throttle(handleBodyScroll), false);
 window.addEventListener('scroll', handleScrollProgress, false);
