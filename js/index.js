@@ -218,8 +218,10 @@ const navLinks = document.querySelectorAll(".nav-link");
 });
 
 function previewPPT(src) {
-  let url = 'http://view.officeapps.live.com/op/view.aspx?src=' + src;
-  window.open(url);
+  // let url = 'http://view.officeapps.live.com/op/view.aspx?src=' + src;
+  // window.open(url);
+
+  getFile(src);
 }
 
 function copy(text) {
@@ -235,14 +237,15 @@ function copy(text) {
 
 document.getElementById('previewPPT').onclick = function (e) {
   e.preventDefault();
-  previewPPT('https://es-game.com/assets/E-Sports.pptx');
+  // previewPPT('./assets/E-Sports.pptx');
+  // previewPPT('http://es-game.com/assets/E-Sports.pptx');
+  window.open('./assets/E-Sports.pdf');
 }
 
 const noticeDom = document.getElementById("message");
 let timer = null;
 
 function showMessage(type, message, time = 2000) {
-  console.log(123)
   noticeDom.classList.remove('hide');
   noticeDom.classList.add(type);
   noticeDom.innerText = message;
@@ -251,6 +254,29 @@ function showMessage(type, message, time = 2000) {
     noticeDom.classList.add('hide');
     noticeDom.classList.remove(type);
   }, time);
+}
+
+function getFile (src) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', src);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          const res = xhr.response;
+          const binaryData = [];
+          binaryData.push(res);
+          let url = window.URL.createObjectURL(res);
+          window.open(url, "_blank");
+          resolve();
+        } else {
+          reject();
+        }
+      }
+    }
+    xhr.setRequestHeader('responseType', 'arraybuffer');
+    xhr.send();
+  });
 }
 
 document.getElementById('copy').onclick = function (e) {
